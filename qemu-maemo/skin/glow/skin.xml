@@ -1,0 +1,26 @@
+<root>
+    <font image="skin-glow-font2.png" width="13" height="25"/>
+    <tooltip red="255" green="255" blue="180"/>
+    <landscape>
+        <skin width="1044" height="600" rctwidth="1044"/>
+        <bgcolor red="255" green="255" blue="255"/>
+        <background image="skin-glow-body.png" posx="0" posy="0"/>
+        <screen width="854" height="480" posx="90" posy="60"/>
+        <button image="skin-glow-rotate.png" posx="743" posy="5" action="Rotate the screen to portrait (F9)" keycode="67" type="rotate" />
+        <button image="skin-glow-zoom_out.png" posx="786" posy="5" action="Emulator zoom out (F12)" keycode="88" type="zoom_out" />
+        <button image="skin-glow-zoom_in.png" posx="829" posy="5" action="Emulator zoom in (F11)" keycode="87" type="zoom_in" />
+        <button image="skin-glow-volume_down.png" posx="872" posy="5" action="Volume/Zoom down (F7)" keycode="65" />
+        <button image="skin-glow-volume_up.png" posx="915" posy="5" action="Volume/Zoom up (F8)" keycode="66" />
+    </landscape>
+    <portrait>
+        <skin width="600" height="1044" rctwidth="600"/>
+        <bgcolor red="255" green="255" blue="255"/>
+        <background image="skin-glow-body_portrait.png" posy="0" posx="0"/>
+        <screen posy="90" posx="59" width="854" height="480"/>
+        <button image="skin-glow-rotate.png" posx="328" posy="5" action="Rotate the screen to portrait (F9)" keycode="67" type="rotate"/>
+        <button image="skin-glow-zoom_out.png" posx="371" posy="5" action="Emulator zoom out (F12)" keycode="88" type="zoom_out" />
+        <button image="skin-glow-zoom_in.png" posx="414" posy="5" action="Emulator zoom in (F11)" keycode="87" type="zoom_in" />
+        <button image="skin-glow-volume_down.png" posx="457" posy="5" action="Volume/Zoom down (F7)" keycode="65"/>
+        <button image="skin-glow-volume_up.png" posx="500" posy="5" action="Volume/Zoom up (F8)" keycode="66"/>
+    </portrait>
+</root>

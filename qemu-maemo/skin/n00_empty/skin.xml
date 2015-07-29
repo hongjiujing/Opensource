@@ -1,0 +1,15 @@
+<root>
+  <tooltip red="255" green="255" blue="180"/>
+  <landscape>
+    <skin width="864" height="512"/>
+    <bgcolor red="255" green="255" blue="255"/>
+    <screen width="864" height="480" posx="0" posy="32"/>
+    <button image="rotate.png" posx="1" posy="1" action="Rotate the screen to portrait (F9)" keycode="67" type="rotate"/>
+  </landscape>
+  <portrait>
+    <skin width="481" height="896"/>
+    <bgcolor red="255" green="255" blue="255"/>
+    <screen width="864" height="480" posx="0" posy="32"/>
+    <button image="rotate.png" posx="1" posy="1" action="Rotate the screen to landscape (F9)" keycode="67" type="rotate"/>
+  </portrait>
+</root>

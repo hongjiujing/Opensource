@@ -1,0 +1,1 @@
+/home/jiujinhx/workbench/code/qemu-maemo/roms/seabios/Makefile
