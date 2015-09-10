@@ -1,0 +1,67 @@
+From 7f9bc935d61fa5ae1baec5d69678245b03336d98 Mon Sep 17 00:00:00 2001
+From: JiuJin Hong <jiujinx.hong@intel.com>
+Date: Fri, 12 Jun 2015 21:50:45 +0800
+Subject: [PATCH] add Qemu Android debug for reading SDL code
+
+Signed-off-by: JiuJin Hong <jiujinx.hong@intel.com>
+---
+ qemu/android/main.c | 14 +++++++++++++-
+ 1 file changed, 13 insertions(+), 1 deletion(-)
+
+diff --git a/qemu/android/main.c b/qemu/android/main.c
+index 7ff7910..65b3eae 100644
+--- a/qemu/android/main.c
++++ b/qemu/android/main.c
+@@ -88,7 +88,12 @@ AndroidRotation  android_framebuffer_rotation;
+ #define  KEYSET_FILE    "default.keyset"
+ SkinKeyset*      android_keyset;
+ 
++#if 0
+ #define  D(...)  do {  if (VERBOSE_CHECK(init)) dprint(__VA_ARGS__); } while (0)
++#else
++#define  D(...)  do {  dprint(__VA_ARGS__); } while (0)
++#endif
++
+ 
+ extern int  control_console_start( int  port );  /* in control.c */
+ 
+@@ -111,7 +116,8 @@ extern void  start_tracing(void);
+ extern void  stop_tracing(void);
+ #endif
+ 
+-unsigned long   android_verbose;
++//Jiujin
++unsigned long   android_verbose=VERBOSE_avd_config;
+ 
+ int   qemu_cpu_delay = 0;
+ int   qemu_cpu_delay_count;
+@@ -1070,6 +1076,8 @@ void init_skinned_ui(const char *path, const char *name, AndroidOptions*  opts)
+             exit(1);
+         }
+ 
++		//path = /home/jiujinhx/workbench/code/froyo-sdk/android-sdk_eng.jiujinhx_linux-x86/platforms/android-2.2/skins/
++		//name = HVGA
+         sprintf(tmp, "%s/%s/layout", path, name);
+         D("trying to load skin file '%s'", tmp);
+ 
+@@ -2105,6 +2113,7 @@ int main(int argc, char **argv)
+      */
+     if (opts->avd != NULL)
+     {
++		D("avdInfo ...\n");
+         android_avdInfo = avdInfo_new( opts->avd, android_avdParams );
+         if (android_avdInfo == NULL) {
+             /* an error message has already been printed */
+@@ -2134,6 +2143,9 @@ int main(int argc, char **argv)
+     opts->skin    = (char*) avdInfo_getSkinName( avd );
+     opts->skindir = (char*) avdInfo_getSkinDir( avd );
+ 
++	//Jiujin
++	//emulator: autoconfig: -skin HVGA
++	// autoconfig: -skindir /home/jiujinhx/workbench/code/froyo-sdk/android-sdk_eng.jiujinhx_linux-x86/platforms/android-2.2/skins
+     if (opts->skin) {
+         D("autoconfig: -skin %s", opts->skin);
+     }
+-- 
+1.9.1
+
